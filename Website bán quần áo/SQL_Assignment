@@ -1,0 +1,234 @@
+create table category (
+						ID_Cate int primary key,
+						Name_Cate varchar(20)
+					  )
+
+
+Create table Product (
+						ID int primary key,
+						Pro_Name varchar(100),
+						Image_Link varchar(200),
+						Brand varchar(50),
+						Size varchar(10),
+						ID_Cate int foreign key(ID_Cate) references Category(ID_Cate),
+						Amount int,
+						Price float,
+						Sale float 
+						);
+
+create table Users(
+						ID_Users int primary key,
+						Name_Users varchar(50),
+						Password_Users varchar(50),
+						Email varchar(50),
+						Phone_Num varchar(20),
+						Date_Create date,
+						AccessRight varchar (15)
+						);
+
+create table Oders(	
+						ID_Oders int primary key,
+						ID int foreign key (ID) references Product (ID),
+						ID_Users int foreign key (ID_Users) references Users (ID_Users),
+						Amount int,
+						Date_Export date
+					)
+
+
+
+create table category2 (
+						ID_Cate int primary key,
+						Name_Cate varchar(20)
+					  )
+
+
+Create table Product2 (
+						ID int primary key,
+						Pro_Name varchar(100),
+						Image_Link varchar(200),
+						Brand varchar(50),
+						Size varchar(10),
+						ID_Cate int foreign key(ID_Cate) references Category(ID_Cate),
+						Amount int,
+						Price float,
+						Sale float 
+						);
+
+create table Users2(
+						ID_Users int primary key,
+						Name_Users varchar(50),
+						Password_Users varchar(50),
+						Email varchar(50),
+						Phone_Num varchar(20),
+						Date_Create date,
+						AccessRight varchar (15)
+						);
+
+create table Oders2(	
+						ID_Oders int primary key,
+						ID int foreign key (ID) references Product (ID),
+						ID_Users int foreign key (ID_Users) references Users (ID_Users),
+						Amount int,
+						Date_Export date
+					)
+
+
+insert into Product2 select * from Product
+insert into category2 select * from category
+insert into Users2 select * from Users
+insert into Oders2 select * from Oders
+
+
+	/* CATEGORY */
+	insert into category values (1, 'Hoddie');
+	insert into category values (2, 'Jacket');
+	insert into category values (3, 'Pant');
+
+/* 1 - Hoddie  */
+
+ 
+insert into Product values(1, 'Red-Hoddie', 'https://mcdn.nhanh.vn/store/23832/ps/20180328/hoodie_dotuoi_500x500.jpg', 'CK', 'S', 1, 100, 200000.0, 10/100);
+insert into Product values(2, 'Red-Hoddie', 'https://mcdn.nhanh.vn/store/23832/ps/20180328/hoodie_dotuoi_500x500.jpg', 'CK', 'M', 1, 100, 230000.0, 10/100);
+insert into Product values(3, 'Red-Hoddie', 'https://mcdn.nhanh.vn/store/23832/ps/20180328/hoodie_dotuoi_500x500.jpg', 'CK', 'L', 1, 100, 250000.0, 10/100);
+insert into Product values(4, 'Red-Hoddie', 'https://mcdn.nhanh.vn/store/23832/ps/20180328/hoodie_dotuoi_500x500.jpg', 'CK', 'XL', 1, 100, 270000.0, 10/100);
+insert into Product values(5, 'Red-Hoddie', 'https://mcdn.nhanh.vn/store/23832/ps/20180328/hoodie_dotuoi_500x500.jpg', 'CK', 'XXL', 1, 100, 280000.0, 10/100);
+
+insert into Product values(6, 'Black-Hoddie','https://file.hstatic.net/1000194662/file/97_fa7f628f8e224f9f9f34e7f4075fb84f.jpg', 'H&M', 'S', 1, 100, 300000.0, 5/100); 
+insert into Product values(7, 'Black-Hoddie','https://file.hstatic.net/1000194662/file/97_fa7f628f8e224f9f9f34e7f4075fb84f.jpg', 'H&M', 'M', 1, 100, 330000.0, 0); 
+insert into Product values(8, 'Black-Hoddie','https://file.hstatic.net/1000194662/file/97_fa7f628f8e224f9f9f34e7f4075fb84f.jpg', 'H&M', 'L', 1, 100, 350000.0, 10/100); 
+insert into Product values(9, 'Black-Hoddie','https://file.hstatic.net/1000194662/file/97_fa7f628f8e224f9f9f34e7f4075fb84f.jpg', 'H&M', 'XL', 1, 100, 370000.0, 25/100); 
+insert into Product values(10,'Black-Hoddie','https://file.hstatic.net/1000194662/file/97_fa7f628f8e224f9f9f34e7f4075fb84f.jpg', 'H&M', 'XXL', 1, 100, 390000.0, 0); 
+
+insert into Product values(11, 'Grey-Hoddie', 'https://lzd-img-global.slatic.net/g/p/6d67f18b6dd6be0a116a5f841f891375.jpg_1200x1200q80.jpg_.webp', 'ABC', 'S', 1, 100, 250000.0, 0);
+insert into Product values(12, 'Grey-Hoddie', 'https://lzd-img-global.slatic.net/g/p/6d67f18b6dd6be0a116a5f841f891375.jpg_1200x1200q80.jpg_.webp', 'ABC', 'M', 1, 100, 250000.0, 10/100);
+insert into Product values(13, 'Grey-Hoddie', 'https://lzd-img-global.slatic.net/g/p/6d67f18b6dd6be0a116a5f841f891375.jpg_1200x1200q80.jpg_.webp', 'ABC', 'L', 1, 100, 250000.0, 20/100);
+insert into Product values(14, 'Grey-Hoddie', 'https://lzd-img-global.slatic.net/g/p/6d67f18b6dd6be0a116a5f841f891375.jpg_1200x1200q80.jpg_.webp', 'ABC', 'XL', 1, 100, 250000.0, 5/100);
+insert into Product values(15, 'Grey-Hoddie', 'https://lzd-img-global.slatic.net/g/p/6d67f18b6dd6be0a116a5f841f891375.jpg_1200x1200q80.jpg_.webp', 'ABC', 'XXL', 1, 100, 250000.0, 0);
+
+insert into Product values(16, 'Pink-Hoddie', 'https://bizweb.dktcdn.net/100/408/793/products/5ddf82d12df3dcad85e22.jpg?v=1606792762567', 'ABC', 'S', 1, 100, 400000.0, 0);
+insert into Product values(17, 'Pink-Hoddie', 'https://bizweb.dktcdn.net/100/408/793/products/5ddf82d12df3dcad85e22.jpg?v=1606792762567', 'ABC', 'M', 1, 100, 420000.0, 20/100);
+insert into Product values(18, 'Pink-Hoddie', 'https://bizweb.dktcdn.net/100/408/793/products/5ddf82d12df3dcad85e22.jpg?v=1606792762567', 'ABC', 'L', 1, 100, 440000.0, 10/100 );
+insert into Product values(19, 'Pink-Hoddie', 'https://bizweb.dktcdn.net/100/408/793/products/5ddf82d12df3dcad85e22.jpg?v=1606792762567', 'ABC', 'XL', 1, 100, 460000.0, 0);
+insert into Product values(20, 'Pink-Hoddie', 'https://bizweb.dktcdn.net/100/408/793/products/5ddf82d12df3dcad85e22.jpg?v=1606792762567', 'ABC', 'XXL', 1, 100, 480000.0, 0);
+
+insert into Product values(21, 'Avenger-Hoddie', 'https://i.pinimg.com/originals/9a/a1/af/9aa1afffd34f9effeb741b9254d46b95.jpg', 'XYZ', 'S', 1, 100, 400000.0, 0);
+insert into Product values(22, 'Avenger-Hoddie', 'https://i.pinimg.com/originals/9a/a1/af/9aa1afffd34f9effeb741b9254d46b95.jpg', 'XYZ', 'M', 1, 100, 420000.0, 10/100);
+insert into Product values(23, 'Avenger-Hoddie', 'https://i.pinimg.com/originals/9a/a1/af/9aa1afffd34f9effeb741b9254d46b95.jpg', 'XYZ', 'L', 1, 100, 440000.0, 20/100);
+insert into Product values(24, 'Avenger-Hoddie', 'https://i.pinimg.com/originals/9a/a1/af/9aa1afffd34f9effeb741b9254d46b95.jpg', 'XYZ', 'XL', 1, 100, 460000.0, 0);
+insert into Product values(25, 'Avenger-Hoddie', 'https://i.pinimg.com/originals/9a/a1/af/9aa1afffd34f9effeb741b9254d46b95.jpg', 'XYZ', 'XXL', 1, 100, 480000.0, 5/100);
+
+insert into Product values(26, 'Batman-Hoddie', 'https://cdn.webshopapp.com/shops/168365/files/360455107/local-fanatic-men-hoodie-batman-print-green.jpg', 'SDF', 'S',1 , 100, 400000.0, 10/100);
+insert into Product values(27, 'Batman-Hoddie', 'https://cdn.webshopapp.com/shops/168365/files/360455107/local-fanatic-men-hoodie-batman-print-green.jpg', 'SDF', 'M',1, 100, 420000.0, 20/100);
+insert into Product values(28, 'Batman-Hoddie', 'https://cdn.webshopapp.com/shops/168365/files/360455107/local-fanatic-men-hoodie-batman-print-green.jpg', 'SDF', 'L',1, 100, 440000.0, 0);
+insert into Product values(29, 'Batman-Hoddie', 'https://cdn.webshopapp.com/shops/168365/files/360455107/local-fanatic-men-hoodie-batman-print-green.jpg', 'SDF', 'XL',1, 100, 460000.0, 10/100);
+insert into Product values(30, 'Batman-Hoddie', 'https://cdn.webshopapp.com/shops/168365/files/360455107/local-fanatic-men-hoodie-batman-print-green.jpg', 'SDF', 'XXL',1, 100, 480000.0, 5/100);
+
+
+
+/* 2 - Jacket */
+
+insert into Product values(31,'Military-jacket', 'https://static.sscontent.com/prozis/contents/products/army-jacket-field-camo-header_1576x1232_546299_616054.jpg', 'A&M', 'S', 2, 100, 200000.0, 10/100);
+insert into Product values(32,'Military-jacket', 'https://static.sscontent.com/prozis/contents/products/army-jacket-field-camo-header_1576x1232_546299_616054.jpg', 'A&M', 'M', 2, 100, 200000.0, 20/100);
+insert into Product values(33,'Military-jacket', 'https://static.sscontent.com/prozis/contents/products/army-jacket-field-camo-header_1576x1232_546299_616054.jpg', 'A&M', 'L', 2, 100, 200000.0, 0);
+insert into Product values(34,'Military-jacket', 'https://static.sscontent.com/prozis/contents/products/army-jacket-field-camo-header_1576x1232_546299_616054.jpg', 'A&M', 'XL', 2, 100, 200000.0, 5/100);
+insert into Product values(35,'Military-jacket', 'https://static.sscontent.com/prozis/contents/products/army-jacket-field-camo-header_1576x1232_546299_616054.jpg', 'A&M', 'XL', 2, 100, 200000.0, 5/100);
+
+insert into Product values(36, 'Cartoon-jacket', 'https://rippedjeans.co/wp-content/uploads/2021/10/DJ010-1.jpg', 'A&P', 'S', 2, 100, 200000.0, 0);
+insert into Product values(37, 'Cartoon-jacket', 'https://rippedjeans.co/wp-content/uploads/2021/10/DJ010-1.jpg', 'A&P', 'M', 2,100, 230000.0, 5/100);
+insert into Product values(38, 'Cartoon-jacket', 'https://rippedjeans.co/wp-content/uploads/2021/10/DJ010-1.jpg', 'A&P', 'L', 2, 100, 250000.0, 12/100);
+insert into Product values(39, 'Cartoon-jacket', 'https://rippedjeans.co/wp-content/uploads/2021/10/DJ010-1.jpg', 'A&P', 'XL', 2, 100, 270000.0, 20/100);
+insert into Product values(40, 'Cartoon-jacket', 'https://rippedjeans.co/wp-content/uploads/2021/10/DJ010-1.jpg', 'A&P', 'XXL', 2, 100, 290000.0, 10/100);
+
+insert into Product values(41, 'Zipper-jacket', 'https://product.hstatic.net/1000378196/product/6e0c7824-251e-4b75-8cd5-d9f394262454_e4b291a55e4542beb79e7a019736e331_grande.jpg', 'A&P', 'S', 2, 100, 200000.0, 0);
+insert into Product values(42, 'Zipper-jacket', 'https://product.hstatic.net/1000378196/product/6e0c7824-251e-4b75-8cd5-d9f394262454_e4b291a55e4542beb79e7a019736e331_grande.jpg', 'A&P', 'M', 2, 100, 230000.0, 5/100);
+insert into Product values(43, 'Zipper-jacket', 'https://product.hstatic.net/1000378196/product/6e0c7824-251e-4b75-8cd5-d9f394262454_e4b291a55e4542beb79e7a019736e331_grande.jpg', 'A&P', 'L', 2, 100, 250000.0, 12/100);
+insert into Product values(44, 'Zipper-jacket', 'https://product.hstatic.net/1000378196/product/6e0c7824-251e-4b75-8cd5-d9f394262454_e4b291a55e4542beb79e7a019736e331_grande.jpg', 'A&P', 'XL', 2, 100, 270000.0, 20/100);
+insert into Product values(45, 'Zipper-jacket', 'https://product.hstatic.net/1000378196/product/6e0c7824-251e-4b75-8cd5-d9f394262454_e4b291a55e4542beb79e7a019736e331_grande.jpg', 'A&P', 'XXL', 2, 100, 290000.0, 12/100);
+
+insert into Product values(46, 'Riding-jacket', 'https://www.studds.com/Adminpanel/uploads/green_420.png', 'A&Z', 'S', 2, 100, 200000.0, 0);
+insert into Product values(47, 'Riding-jacket', 'https://www.studds.com/Adminpanel/uploads/green_420.png', 'A&Z', 'M,', 2, 100, 230000.0, 5/100);
+insert into Product values(48, 'Riding-jacket', 'https://www.studds.com/Adminpanel/uploads/green_420.png', 'A&Z', 'L', 2, 100, 250000.0, 12/100);
+insert into Product values(49, 'Riding-jacket', 'https://www.studds.com/Adminpanel/uploads/green_420.png', 'A&Z', 'XL', 2, 100, 270000.0, 20/100);
+insert into Product values(50, 'Riding-jacket', 'https://www.studds.com/Adminpanel/uploads/green_420.png', 'A&Z', 'XXL', 2, 100, 290000.0, 10/100);
+
+insert into Product values(51, 'KeepWarm-jacket', 'https://fluffkidswear.com/wp-content/uploads/2019/12/Emerald-Big-Puffer-jacket.jpg', 'ABMM', 'S', 2, 100, 200000.0, 0);
+insert into Product values(52, 'KeepWarm-jacket', 'https://fluffkidswear.com/wp-content/uploads/2019/12/Emerald-Big-Puffer-jacket.jpg', 'ABMM', 'M', 2, 100, 230000.0, 5/100);
+insert into Product values(53, 'KeepWarm-jacket', 'https://fluffkidswear.com/wp-content/uploads/2019/12/Emerald-Big-Puffer-jacket.jpg', 'ABMM', 'L', 2, 100, 250000.0, 12/100);
+insert into Product values(54, 'KeepWarm-jacket', 'https://fluffkidswear.com/wp-content/uploads/2019/12/Emerald-Big-Puffer-jacket.jpg', 'ABMM', 'XL', 2, 100, 270000.0, 20/100);
+insert into Product values(55, 'KeepWarm-jacket', 'https://fluffkidswear.com/wp-content/uploads/2019/12/Emerald-Big-Puffer-jacket.jpg', 'ABMM', 'XXL', 2, 100, 290000.0, 10/100);
+
+insert into Product values(56, 'WindProof-jacket', 'https://m.media-amazon.com/images/S/aplus-media/sc/8a336cca-9eea-4a56-ba17-03d21f28bc8f.__CR0,0,970,600_PT0_SX970_V1___.jpg', 'A&P', 'S', 2, 100, 200000.0, 0);
+insert into Product values(57, 'WindProof-jacket', 'https://m.media-amazon.com/images/S/aplus-media/sc/8a336cca-9eea-4a56-ba17-03d21f28bc8f.__CR0,0,970,600_PT0_SX970_V1___.jpg', 'A&P', 'M', 2, 100, 230000.0, 5/100);
+insert into Product values(58, 'WindProof-jacket', 'https://m.media-amazon.com/images/S/aplus-media/sc/8a336cca-9eea-4a56-ba17-03d21f28bc8f.__CR0,0,970,600_PT0_SX970_V1___.jpg', 'A&P', 'L', 2, 100, 250000.0, 12/100);
+insert into Product values(59, 'WindProof-jacket', 'https://m.media-amazon.com/images/S/aplus-media/sc/8a336cca-9eea-4a56-ba17-03d21f28bc8f.__CR0,0,970,600_PT0_SX970_V1___.jpg', 'A&P', 'XL', 2, 100, 270000.0, 20/100);
+insert into Product values(60, 'WindProof-jacket', 'https://m.media-amazon.com/images/S/aplus-media/sc/8a336cca-9eea-4a56-ba17-03d21f28bc8f.__CR0,0,970,600_PT0_SX970_V1___.jpg', 'A&P', 'XXL', 2, 100, 290000.0, 10/100);
+
+
+
+/* 3 - Pants */
+insert into Product values(61, 'Jogger-pant', 'https://factoryoutlet.asia/uploads/2020/7/14/quan-add-unisex-jogger-3-soc-logo-original-lo-vang_1.jpg?v=1622521787', 'AHUP', 'S', 3, 100, 200000.0, 0);
+insert into Product values(62, 'Jogger-pant', 'https://factoryoutlet.asia/uploads/2020/7/14/quan-add-unisex-jogger-3-soc-logo-original-lo-vang_1.jpg?v=1622521787', 'AHUP', 'M', 3, 100, 230000.0, 5/100);
+insert into Product values(63, 'Jogger-pant', 'https://factoryoutlet.asia/uploads/2020/7/14/quan-add-unisex-jogger-3-soc-logo-original-lo-vang_1.jpg?v=1622521787', 'AHUP', 'L', 3, 100, 250000.0, 12/100);
+insert into Product values(64, 'Jogger-pant', 'https://factoryoutlet.asia/uploads/2020/7/14/quan-add-unisex-jogger-3-soc-logo-original-lo-vang_1.jpg?v=1622521787', 'AHUP', 'XL', 3, 100, 270000.0, 20/100);
+insert into Product values(65, 'Jogger-pant', 'https://factoryoutlet.asia/uploads/2020/7/14/quan-add-unisex-jogger-3-soc-logo-original-lo-vang_1.jpg?v=1622521787', 'AHUP', 'XXL', 3, 100, 290000.0, 10/100);
+
+insert into Product values(66, 'Rain-coat', 'https://we25.vn/media/images/aomuathoitrang_02.jpg', 'AHUP', 'S', 3, 100, 200000.0, 0);
+insert into Product values(67, 'Rain-coat', 'https://we25.vn/media/images/aomuathoitrang_02.jpg', 'AHUP', 'M', 3, 100, 230000.0, 5/100);
+insert into Product values(68, 'Rain-coat', 'https://we25.vn/media/images/aomuathoitrang_02.jpg', 'AHUP', 'L', 3, 100, 50000.0, 12/100);
+insert into Product values(69, 'Rain-coat', 'https://we25.vn/media/images/aomuathoitrang_02.jpg', 'AHUP', 'XL', 3, 100, 270000.0, 20/100);
+insert into Product values(70, 'Rain-coat', 'https://we25.vn/media/images/aomuathoitrang_02.jpg', 'AHUP', 'XLL', 3, 100, 290000.0, 10/100);
+
+insert into Product values(71, 'Couple-jacket', 'https://www.spearl.asia/wp-content/uploads/2020/02/dong-phuc-ao-jacket-1.jpg', 'AHUP', 'S', 3, 200, 200000.0, 0);
+insert into Product values(72, 'Couple-jacket', 'https://www.spearl.asia/wp-content/uploads/2020/02/dong-phuc-ao-jacket-1.jpg', 'AHUP', 'M', 3, 200, 230000.0, 5/100);
+insert into Product values(73, 'Couple-jacket', 'https://www.spearl.asia/wp-content/uploads/2020/02/dong-phuc-ao-jacket-1.jpg', 'AHUP', 'L', 3, 200, 250000.0, 12/100);
+insert into Product values(74, 'Couple-jacket', 'https://www.spearl.asia/wp-content/uploads/2020/02/dong-phuc-ao-jacket-1.jpg', 'AHUP', 'XL', 3, 200, 270000.0, 20/100);
+insert into Product values(75, 'Couple-jacket', 'https://www.spearl.asia/wp-content/uploads/2020/02/dong-phuc-ao-jacket-1.jpg', 'AHUP', 'XXL', 3, 200, 290000.0, 10/100);
+
+insert into Product values(76, 'Terminator-jacket', 'https://www.coreoutfits.com/wp-content/uploads/2022/02/terminarnoldschleatherjacket_2.jpg', 'AHUP', 'S', 3, 100, 200000.0, 0);
+insert into Product values(77, 'Terminator-jacket', 'https://www.coreoutfits.com/wp-content/uploads/2022/02/terminarnoldschleatherjacket_2.jpg', 'AHUP', 'M', 3, 100, 230000.0, 5/100);
+insert into Product values(78, 'Terminator-jacket', 'https://www.coreoutfits.com/wp-content/uploads/2022/02/terminarnoldschleatherjacket_2.jpg', 'AHUP', 'L', 3, 100, 250000.0, 12/100);
+insert into Product values(79, 'Terminator-jacket', 'https://www.coreoutfits.com/wp-content/uploads/2022/02/terminarnoldschleatherjacket_2.jpg', 'AHUP', 'XL', 3, 100, 270000.0, 20/100);
+insert into Product values(80, 'Terminator-jacket', 'https://www.coreoutfits.com/wp-content/uploads/2022/02/terminarnoldschleatherjacket_2.jpg', 'AHUP', 'XL', 3, 100, 290000.0, 12/100);
+
+insert into Product values(81, 'Motobike-jacket', 'https://www.motolegends.com/Images/contentarchive/How%20to%20choose%20a%20motorcycle%20jacket%20-%20removeable%20membrane%202.jpg', 'AHUP', 'S', 3, 100, 200000.0, 0);
+insert into Product values(82, 'Motobike-jacket', 'https://www.motolegends.com/Images/contentarchive/How%20to%20choose%20a%20motorcycle%20jacket%20-%20removeable%20membrane%202.jpg', 'AHUP', 'M', 3, 100, 230000.0, 5/100);
+insert into Product values(83, 'Motobike-jacket', 'https://www.motolegends.com/Images/contentarchive/How%20to%20choose%20a%20motorcycle%20jacket%20-%20removeable%20membrane%202.jpg', 'AHUP', 'L', 3, 100, 250000.0, 12/100);
+insert into Product values(84, 'Motobike-jacket', 'https://www.motolegends.com/Images/contentarchive/How%20to%20choose%20a%20motorcycle%20jacket%20-%20removeable%20membrane%202.jpg', 'AHUP', 'XL', 3, 100, 270000.0, 20/100);
+insert into Product values(85, 'Motobike-jacket', 'https://www.motolegends.com/Images/contentarchive/How%20to%20choose%20a%20motorcycle%20jacket%20-%20removeable%20membrane%202.jpg', 'AHUP', 'XXL', 3, 100, 290000.0, 10/100);
+
+insert into Product values(86, 'Bicyle-jacket', 'https://trek.scene7.com/is/image/TrekBicycleProducts/VelocisRainCyclingJacket_24712_C_Primary?wid=1200', 'AHUP', 'S', 3, 100, 200000.0, 0);
+insert into Product values(87, 'Bicyle-jacket', 'https://trek.scene7.com/is/image/TrekBicycleProducts/VelocisRainCyclingJacket_24712_C_Primary?wid=1200', 'AHUP', 'M', 3, 100, 230000.0, 5/100);
+insert into Product values(88, 'Bicyle-jacket', 'https://trek.scene7.com/is/image/TrekBicycleProducts/VelocisRainCyclingJacket_24712_C_Primary?wid=1200', 'AHUP', 'L', 3, 100, 250000.0, 12/100);
+insert into Product values(89, 'Bicyle-jacket', 'https://trek.scene7.com/is/image/TrekBicycleProducts/VelocisRainCyclingJacket_24712_C_Primary?wid=1200', 'AHUP', 'XL', 3, 100, 270000.0, 20/100);
+insert into Product values(90, 'Bicyle-jacket', 'https://trek.scene7.com/is/image/TrekBicycleProducts/VelocisRainCyclingJacket_24712_C_Primary?wid=1200', 'AHUP', 'XXL', 3, 100, 290000.0, 10/100);
+
+
+/* USERS */
+
+insert into Users values(1, 'LacLT@steam.com', '12345678', 'LacLT@steam.com', '090123456789', '2020-12-12', 'admin');
+insert into Users values(2, 'TrieuHCH@steam.com', '12345678', 'TrieuHCH@steam.com', '090123456789', '2020-12-12', 'admin');
+insert into Users values(3, 'ManhVV@steam.com', '12345678', 'ManhVV@steam.com', '090123456789', '2020-12-12', 'admin');
+insert into Users values(4, 'MinhTH@steam.com', '12345678', 'MinhTH@steam.com', '090123456789', '2020-12-12', 'admin');
+insert into Users values(5, 'Cus_123@gmail.com', '12345678', 'Cus_123@gmail.com', '090123456789', '2020-12-12', 'customer');
+insert into Users values(6, 'Cus_456@gmail.com', '12345678', 'Cus_456@gmail.com', '090123456789', '2020-12-12', 'customer');
+
+use Online_shop_DB
+
+select * from category
+select * from Product
+select * from Users 
+select * from Oders
+
+select * from category2
+select * from Product2
+select * from Users2
+select * from Oders2
+
+delete from Product
+delete from Users
+delete from Oders
+
+drop table Product
+drop table Users
+drop table Category
+drop table Oders

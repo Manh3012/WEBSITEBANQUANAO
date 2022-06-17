@@ -1,0 +1,8 @@
+DBUtils\DBUtils.class
+Model\Product.class
+Model\UserSession.class
+DBManager\AccessManager.class
+Model\User.class
+Controller\ProductController.class
+Controller\AccessController.class
+DBManager\ProductManager.class
